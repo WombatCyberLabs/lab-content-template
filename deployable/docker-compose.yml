@@ -1,0 +1,9 @@
+version: '2.1'
+
+services:
+  docs:
+    image: ghcr.io/wombatcyberlabs/{{ repository.name }}-docs:main
+    restart: always
+    hostname: docs
+    ports:
+      - "80:80"

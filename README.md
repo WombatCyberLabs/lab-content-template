@@ -1,2 +1,2 @@
-# lab-content-template
-Template for lab content repos that should be used to create new repos for holding lab content documentation and build/deploy info
+# Template Lab
+This is an template lab for getting PoC lab docs/deployment building automatically.
