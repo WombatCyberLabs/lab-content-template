@@ -1,0 +1,12 @@
+{
+    "timeout": 4000,
+    "services":[
+        {
+            "name":"Lab Docs",
+            "hostname":"10.13.37.10",
+            "http": true,
+            "testPath":"/",
+            "ports":[]
+        }
+    ]
+}
