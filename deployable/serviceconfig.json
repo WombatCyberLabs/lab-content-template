@@ -7,6 +7,15 @@
             "http": true,
             "testPath":"/",
             "ports":[]
+        },
+        {
+            "name":"VPN Config Web",
+            "hostname":"10.13.37.8",
+            "ports":[
+                {
+                    "port": 80
+                }
+            ]
         }
     ]
 }

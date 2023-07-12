@@ -21,6 +21,32 @@ services:
     networks:
       lab_net:
         ipv4_address: 10.13.37.11
+  dockovpn:
+    image: alekslitvinenk/openvpn:v1.9.0-regen-dh
+    restart: always
+    hostname: vpn
+    networks:
+      lab_net:
+        ipv4_address: 10.13.37.9
+    ports:
+      - "1194:1194/udp"
+    cap_add:
+      - NET_ADMIN
+    environment:
+      HOST_ADDR: '0.0.0.0'
+    volumes:
+      - ./openvpnserver.conf:/etc/openvpn/server.conf:ro
+  vpnconfig:
+    image: ghcr.io/wombatcyberlabs/lab-utility-vpnconfig:main
+    restart: always
+    hostname: vpnconfig
+    depends_on:
+      - dockovpn
+    networks:
+      lab_net:
+        ipv4_address: 10.13.37.8
+    ports: 
+      - "8081:80"
 
 networks:
   lab_net:
